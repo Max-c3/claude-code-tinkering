@@ -8,18 +8,20 @@
     --bg-secondary: #111111;
 
     --text-primary: #e5e5e5;
-    --text-secondary: rgba(229, 229, 229, 0.6);
-    --text-muted: rgba(229, 229, 229, 0.4);
+    --text-secondary: rgba(229, 229, 229, 0.7);
+    --text-muted: rgba(229, 229, 229, 0.5);
 
-    /* Accent colors - green/blue palette */
+    /* Accent colors - more vibrant green/blue palette */
     --accent-green: #00ff88;
+    --accent-green-bright: #50ffaa;
     --accent-teal: #00d4aa;
-    --accent-blue: #0088ff;
-    --accent-cyan: #00ccff;
+    --accent-blue: #00aaff;
+    --accent-blue-bright: #44ccff;
+    --accent-cyan: #00e5ff;
 
     /* Glass effect */
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
     --glass-blur: 40px;
 
     /* Transitions */
@@ -32,11 +34,11 @@
     --bg-secondary: #ffffff;
 
     --text-primary: #171717;
-    --text-secondary: rgba(23, 23, 23, 0.6);
-    --text-muted: rgba(23, 23, 23, 0.4);
+    --text-secondary: rgba(23, 23, 23, 0.7);
+    --text-muted: rgba(23, 23, 23, 0.5);
 
-    --glass-bg: rgba(255, 255, 255, 0.6);
-    --glass-border: rgba(0, 0, 0, 0.06);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.08);
 }
 
 /* ============================================
@@ -64,13 +66,13 @@ body {
 }
 
 a {
-    color: var(--text-secondary);
+    color: var(--accent-cyan);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 a:hover {
-    color: var(--accent-green);
+    color: var(--accent-green-bright);
 }
 
 /* ============================================
@@ -91,40 +93,40 @@ a:hover {
 .orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.3;
+    filter: blur(100px);
+    opacity: 0.5;
     animation: float 25s infinite ease-in-out;
 }
 
 [data-theme="light"] .orb {
-    opacity: 0.2;
-    filter: blur(150px);
+    opacity: 0.35;
+    filter: blur(120px);
 }
 
 .orb-1 {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
-    top: -100px;
-    right: -50px;
+    top: -150px;
+    right: -100px;
     animation-delay: 0s;
 }
 
 .orb-2 {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
-    top: 50%;
-    left: -100px;
+    top: 40%;
+    left: -150px;
     animation-delay: -8s;
 }
 
 .orb-3 {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
-    bottom: -50px;
-    right: 20%;
+    bottom: -100px;
+    right: 15%;
     animation-delay: -16s;
 }
 
@@ -167,6 +169,7 @@ a:hover {
 .theme-toggle:hover {
     color: var(--accent-green);
     border-color: var(--accent-green);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
 .icon-sun {
@@ -199,15 +202,89 @@ a:hover {
     padding: 4rem 2rem;
 }
 
+/* ============================================
+   Glass Panel with Shimmer Border
+   ============================================ */
+
 .glass-panel {
+    position: relative;
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
     border-radius: 24px;
     padding: 3rem;
     max-width: 680px;
     width: 100%;
+}
+
+/* Shimmer border container */
+.glass-panel::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    padding: 2px;
+    background: conic-gradient(
+        from var(--shimmer-angle, 0deg),
+        transparent 0%,
+        var(--accent-green) 10%,
+        var(--accent-cyan) 20%,
+        var(--accent-blue) 30%,
+        transparent 40%,
+        transparent 60%,
+        var(--accent-blue) 70%,
+        var(--accent-cyan) 80%,
+        var(--accent-green) 90%,
+        transparent 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: shimmer 4s linear infinite;
+    opacity: 0.8;
+}
+
+/* Inner glow effect */
+.glass-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 136, 0.1) 0%,
+        transparent 50%,
+        rgba(0, 170, 255, 0.1) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        --shimmer-angle: 0deg;
+    }
+    100% {
+        --shimmer-angle: 360deg;
+    }
+}
+
+/* Enable CSS custom property animation */
+@property --shimmer-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Glass panel content needs to be above pseudo-elements */
+.glass-panel > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* ============================================
@@ -216,12 +293,19 @@ a:hover {
 
 .bio {
     margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
 }
 
 .bio p {
     color: var(--text-secondary);
     margin-bottom: 0.25rem;
     font-size: 0.9rem;
+}
+
+.bio p:first-child {
+    color: var(--accent-green);
+    font-weight: 500;
 }
 
 /* ============================================
@@ -233,13 +317,37 @@ a:hover {
 }
 
 .section-label {
-    color: var(--text-muted);
+    color: var(--accent-cyan);
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
+    opacity: 0.8;
 }
 
 .belief-group {
     margin-bottom: 1.5rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-primary), var(--bg-primary)),
+                      linear-gradient(180deg, var(--accent-green) 0%, var(--accent-blue) 100%);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    transition: all var(--transition-fast);
+}
+
+.belief-group:hover {
+    background-image: linear-gradient(var(--bg-primary), var(--bg-primary)),
+                      linear-gradient(180deg, var(--accent-green-bright) 0%, var(--accent-blue-bright) 100%);
+    padding-left: 1rem;
+}
+
+[data-theme="light"] .belief-group {
+    background-image: linear-gradient(var(--bg-secondary), var(--bg-secondary)),
+                      linear-gradient(180deg, var(--accent-green) 0%, var(--accent-blue) 100%);
+}
+
+[data-theme="light"] .belief-group:hover {
+    background-image: linear-gradient(var(--bg-secondary), var(--bg-secondary)),
+                      linear-gradient(180deg, var(--accent-green-bright) 0%, var(--accent-blue-bright) 100%);
 }
 
 .belief-group:last-child {
@@ -265,10 +373,10 @@ a:hover {
     position: absolute;
     left: 0;
     top: 0.55rem;
-    width: 4px;
+    width: 6px;
     height: 1px;
-    background: var(--accent-green);
-    opacity: 0.5;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+    opacity: 0.7;
 }
 
 /* ============================================
@@ -279,16 +387,34 @@ a:hover {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 170, 255, 0.1);
 }
 
 .links a {
     font-size: 0.85rem;
     color: var(--text-muted);
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+    transition: width var(--transition-fast);
 }
 
 .links a:hover {
     color: var(--accent-green);
+}
+
+.links a:hover::after {
+    width: 100%;
 }
 
 /* ============================================
@@ -313,6 +439,14 @@ a:hover {
         top: 1.5rem;
         right: 1.5rem;
     }
+
+    .belief-group {
+        padding-left: 0.5rem;
+    }
+
+    .belief-group:hover {
+        padding-left: 0.75rem;
+    }
 }
 
 /* ============================================
@@ -328,5 +462,11 @@ a:hover {
 
     .orb {
         animation: none;
+    }
+
+    .glass-panel::before {
+        animation: none;
+        background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%);
+        opacity: 0.3;
     }
 }
