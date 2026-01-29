@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal</title>
-    <meta name="description" content="Personal webpage - learn about who I am and how I think">
+    <title>Your Name</title>
+    <meta name="description" content="Personal webpage">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Animated gradient orbs -->
@@ -16,210 +16,90 @@
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
-        <div class="orb orb-4"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="#" class="nav-logo">YN</a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#beliefs">Beliefs</a>
-            <a href="#projects">Projects</a>
-            <a href="#now">Now</a>
-            <a href="#connect">Connect</a>
+    <!-- Theme toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <main class="content">
+        <div class="glass-panel">
+            <section class="bio">
+                <p>Born in 1998</p>
+                <p>Based in San Francisco, CA</p>
+                <p>Operational lead in a startup managing end-to-end influencer marketing workflows</p>
+                <p>On the Internet since childhood</p>
+                <p>Work focuses on improving team tempo and clarity under uncertainty</p>
+                <p>Read ~6 hrs/week on decision-making, systems, and strategy</p>
+                <p>Exploring frameworks for execution and learning</p>
+            </section>
+
+            <section class="beliefs">
+                <p class="section-label">Some things I believe:</p>
+
+                <div class="belief-group">
+                    <p class="belief-main">High-leverage work is about direction, not just effort</p>
+                    <p class="belief-sub">Clarity of intent unlocks compounding impact</p>
+                    <p class="belief-sub">Choose the right problem before choosing the solution</p>
+                </div>
+
+                <div class="belief-group">
+                    <p class="belief-main">Speed of feedback determines learning velocity</p>
+                    <p class="belief-sub">Faster cycles reveal truth sooner</p>
+                    <p class="belief-sub">Execution pace amplifies learning</p>
+                </div>
+
+                <div class="belief-group">
+                    <p class="belief-main">Mental models grounded in first principles outperform heuristics</p>
+                    <p class="belief-sub">Biases hide constraints</p>
+                    <p class="belief-sub">Progress requires questioning assumptions</p>
+                </div>
+
+                <div class="belief-group">
+                    <p class="belief-main">Autonomous teams with aligned goals outperform top-down control</p>
+                    <p class="belief-sub">Remove drag, empower judgment</p>
+                    <p class="belief-sub">Meetings should enable decisions, not absorb time</p>
+                </div>
+
+                <div class="belief-group">
+                    <p class="belief-main">Complexity masks leverage; simplify to uncover it</p>
+                    <p class="belief-sub">Fewer moving parts, clearer actions</p>
+                </div>
+
+                <div class="belief-group">
+                    <p class="belief-main">The best outcomes emerge when mistakes are feedback, not failure</p>
+                    <p class="belief-sub">Feedback fuels learning</p>
+                    <p class="belief-sub">Outcomes matter more than effort</p>
+                </div>
+
+                <div class="belief-group">
+                    <p class="belief-main">Competence is built by doing hard, ambiguous work</p>
+                    <p class="belief-sub">Growth comes from confronting uncertainty</p>
+                    <p class="belief-sub">Confidence arises from feedback on action</p>
+                </div>
+            </section>
+
+            <section class="links">
+                <a href="mailto:your@email.com">email</a>
+                <a href="https://twitter.com/yourusername">twitter</a>
+                <a href="https://linkedin.com/in/yourusername">linkedin</a>
+            </section>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="greeting">Hello, I'm</span>
-                    <span class="name">Your Name</span>
-                </h1>
-                <p class="hero-tagline">A curious mind exploring the intersection of technology, creativity, and human potential.</p>
-                <a href="#about" class="hero-cta">
-                    <span>Discover more</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                </a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="section" id="about">
-            <div class="container">
-                <h2 class="section-title">About</h2>
-                <div class="glass-card about-card">
-                    <p class="about-text">
-                        <!-- Replace with your content -->
-                        Write a few paragraphs about yourself here. This isn't a resume—it's your chance to show personality. What drives you? What makes you tick? What would someone find surprising about you?
-                    </p>
-                    <p class="about-text">
-                        Share what you're passionate about, how you approach problems, and what kind of person you are. Be authentic—this is how people get a sense of who you really are.
-                    </p>
-                    <p class="about-text">
-                        Maybe mention your background, but focus more on the journey and less on the credentials. People connect with stories, not bullet points.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Beliefs Section -->
-        <section class="section" id="beliefs">
-            <div class="container">
-                <h2 class="section-title">Beliefs</h2>
-                <p class="section-subtitle">Principles that guide how I think and work</p>
-                <div class="beliefs-grid">
-                    <div class="glass-card belief-card">
-                        <span class="belief-number">01</span>
-                        <h3 class="belief-title">Belief Title One</h3>
-                        <p class="belief-description">Explain this belief and why it matters to you. How does it shape your decisions and actions?</p>
-                    </div>
-                    <div class="glass-card belief-card">
-                        <span class="belief-number">02</span>
-                        <h3 class="belief-title">Belief Title Two</h3>
-                        <p class="belief-description">Another principle you hold dear. What experiences led you to this belief?</p>
-                    </div>
-                    <div class="glass-card belief-card">
-                        <span class="belief-number">03</span>
-                        <h3 class="belief-title">Belief Title Three</h3>
-                        <p class="belief-description">Share a perspective that might be unique to you. What do you see that others might miss?</p>
-                    </div>
-                    <div class="glass-card belief-card">
-                        <span class="belief-number">04</span>
-                        <h3 class="belief-title">Belief Title Four</h3>
-                        <p class="belief-description">A belief about work, life, creativity, or relationships. Make it personal.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="section" id="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Things I've built and worked on</p>
-                <div class="projects-grid">
-                    <a href="#" class="glass-card project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));">
-                            <!-- Add project image or keep gradient -->
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Project One</h3>
-                            <p class="project-description">Brief description of what this project is and why it matters.</p>
-                            <span class="project-link">View project →</span>
-                        </div>
-                    </a>
-                    <a href="#" class="glass-card project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));">
-                            <!-- Add project image or keep gradient -->
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Project Two</h3>
-                            <p class="project-description">Brief description of what this project is and why it matters.</p>
-                            <span class="project-link">View project →</span>
-                        </div>
-                    </a>
-                    <a href="#" class="glass-card project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));">
-                            <!-- Add project image or keep gradient -->
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Project Three</h3>
-                            <p class="project-description">Brief description of what this project is and why it matters.</p>
-                            <span class="project-link">View project →</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Now Section -->
-        <section class="section" id="now">
-            <div class="container">
-                <h2 class="section-title">Now</h2>
-                <p class="section-subtitle">What I'm currently focused on</p>
-                <div class="glass-card now-card">
-                    <p class="now-update">Last updated: <time datetime="2025-01">January 2025</time></p>
-                    <ul class="now-list">
-                        <li>Currently exploring <strong>something interesting</strong> — what are you learning?</li>
-                        <li>Working on <strong>a project or role</strong> — what takes up your time?</li>
-                        <li>Reading <strong>a book or author</strong> — what's shaping your thinking?</li>
-                        <li>Excited about <strong>an idea or trend</strong> — what has your attention?</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Connect Section -->
-        <section class="section" id="connect">
-            <div class="container">
-                <h2 class="section-title">Connect</h2>
-                <p class="section-subtitle">Let's start a conversation</p>
-                <div class="glass-card connect-card">
-                    <p class="connect-text">
-                        I'm always interested in meeting curious people. Whether you want to collaborate, chat about ideas, or just say hello—reach out.
-                    </p>
-                    <div class="connect-links">
-                        <a href="mailto:your@email.com" class="connect-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span>Email</span>
-                        </a>
-                        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="connect-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
-                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
-                            </svg>
-                            <span>X / Twitter</span>
-                        </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="connect-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="connect-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
